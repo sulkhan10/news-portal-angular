@@ -14,4 +14,7 @@ export class NewsService {
   fetchNews(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}?api-key=${this.apiKey}`);
   }
+  
 }
+
+

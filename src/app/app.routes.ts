@@ -1,8 +1,14 @@
-import { Routes } from '@angular/router';
-import { NewsListComponent } from './components/news-list/news-list.component'; // Ensure this file exists at the specified path
-import { NewsDetailComponent } from './components/news-detail/news-detail.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { NewsListComponent } from './components/news-list/news-list.component';
 
 export const routes: Routes = [
-  { path: '', component: NewsListComponent },
-  { path: 'news/:id', component: NewsDetailComponent },
+  { path: 'news', component: NewsListComponent },
+  { path: '', redirectTo: '/news', pathMatch: 'full' },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
