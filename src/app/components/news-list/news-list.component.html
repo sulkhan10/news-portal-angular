@@ -1,0 +1,8 @@
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">News Articles</h1>
+    <div *ngFor="let article of news" class="mb-4 p-4 border rounded shadow">
+      <h2 class="font-semibold text-lg text-red-500">{{ article.title }}</h2>
+      <p>{{ article.abstract }}</p>
+    </div>
+  </div>
+  
