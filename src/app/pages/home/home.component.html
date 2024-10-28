@@ -2,56 +2,50 @@
   <div class="fixed bg-white w-full mx-auto p-6 pb-18 h-[15vh] z-20">
     <!-- Header -->
     <header class="flex items-center h-[60%] justify-between border-b pb-4 mb-1">
-      <div class="text-gray-600 text-sm">Always Updated</div>
-      <div class="text-2xl font-bold" style="font-family: 'Goudy Text', serif;">The SG Times</div>
-      <div class="text-gray-600 text-sm">{{ currentDate }}</div>
+      <div class="text-gray-600 text-xs w-1/4">Always Updated</div>
+      <div
+        class="text-2xl font-bold text-gray-800"
+        style="font-family: 'Goudy Text', serif; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);"
+      >
+        The SG Times
+      </div>
+      <div class="text-gray-600 text-xs text-right w-1/4">{{ currentDate }}</div>
     </header>
 
     <!-- Navigation -->
-    <nav class="flex space-x-4 mb-6  justify-center pb-2 border-b border-b-black">
-      <a href="#" class="text-gray-800 hover:underline">U.S.</a>
-      <a href="#" class="text-gray-800 hover:underline">World</a>
-      <a href="#" class="text-gray-800 hover:underline">Business</a>
-      <a href="#" class="text-gray-800 hover:underline">Arts</a>
-      <a href="#" class="text-gray-800 hover:underline">Lifestyle</a>
-      <a href="#" class="text-gray-800 hover:underline">Opinion</a>
-      <a href="#" class="text-gray-800 hover:underline">Audio</a>
-      <a href="#" class="text-gray-800 hover:underline">Games</a>
-      <a href="#" class="text-gray-800 hover:underline">Cooking</a>
-      <span class="absolute bottom-3 left-2 right-6  border-b border-black transform translate-y-full"></span>
+    <nav class="flex overflow-scroll space-x-4 mb-6 justify-center pb-2 border-b border-b-black">
+      <div (click)="setSection('home')" [ngClass]="{'font-bold': selectedCategory === 'home'}" class="text-gray-800 hover:underline">All</div>
+      <div (click)="setSection('arts')" [ngClass]="{'font-bold': selectedCategory === 'arts'}" class="text-gray-800 hover:underline">Arts</div>
+      <div (click)="setSection('business')" [ngClass]="{'font-bold': selectedCategory === 'business'}" class="text-gray-800 hover:underline">Business</div>
+      <div (click)="setSection('fashion')" [ngClass]="{'font-bold': selectedCategory === 'fashion'}" class="text-gray-800 hover:underline">Fashion</div>
+      <div (click)="setSection('food')" [ngClass]="{'font-bold': selectedCategory === 'food'}" class="text-gray-800 hover:underline">Food</div>
+      <div (click)="setSection('health')" [ngClass]="{'font-bold': selectedCategory === 'health'}" class="text-gray-800 hover:underline">Health</div>
+      <div (click)="setSection('politics')" [ngClass]="{'font-bold': selectedCategory === 'politics'}" class="text-gray-800 hover:underline">Politics</div>
+      <div (click)="setSection('sports')" [ngClass]="{'font-bold': selectedCategory === 'sports'}" class="text-gray-800 hover:underline">Sports</div>
+      <span class="absolute bottom-3 left-2 right-6 border-b border-black transform translate-y-full"></span>
     </nav>
-
   </div>
 
   <!-- Main content grid -->
-  <div class="grid grid-cols-3 gap-6 mx-auto p-6 pt-[17vh]">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto p-6 pt-[17vh]">
     <!-- Left Column -->
     <div class="col-span-2">
-      <app-news-list />
+      <app-news-list [category]="selectedCategory"></app-news-list>
     </div>
 
     <!-- Right Column -->
     <div class="space-y-6">
       <!-- Article -->
       <div class="p-4 bg-white shadow">
-        <h3 class="font-bold text-lg">
-          Inside the Movement Behind Trump’s Election Lies
-        </h3>
-        <p class="text-gray-700 mt-2">
-          For years, Republican activists have huddled in video meetings to talk
-          about remaking democracy and plan for the election. The Times has
-          obtained the recordings.
-        </p>
+        <h3 class="font-bold text-lg">Inside the Movement Behind Trump’s Election Lies</h3>
+        <p class="text-gray-700 mt-2">For years, Republican activists have huddled in video meetings to talk about remaking democracy and plan for the election. The Times has obtained the recordings.</p>
         <div class="text-gray-500 mt-1">5 min read</div>
       </div>
 
       <!-- Article -->
       <div class="p-4 bg-white shadow">
         <h3 class="font-bold text-lg">3 Ways to Make Your Commute Enjoyable</h3>
-        <p class="text-gray-700 mt-2">
-          Traffic jams and train delays happen, but they don’t have to ruin your
-          trip.
-        </p>
+        <p class="text-gray-700 mt-2">Traffic jams and train delays happen, but they don’t have to ruin your trip.</p>
         <div class="text-gray-500 mt-1">4 min read</div>
       </div>
     </div>
