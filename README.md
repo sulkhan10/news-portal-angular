@@ -58,7 +58,7 @@ http://localhost:4200/
 
 ## Demo
 
-A live demo of the application can be found [here](https://sg-times.netlify.app/).
+A live demo of the application can be found [here](https://news-portal-angular-zzie.vercel.app/).
 
 ## License
 
