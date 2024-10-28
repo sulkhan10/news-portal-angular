@@ -1,24 +1,20 @@
 <div class="mb-6">
   <ng-container *ngIf="loading; else articleList">
-    <app-loading-spinner></app-loading-spinner>
-    <!-- Show loading spinner -->
+    <app-loading-spinner></app-loading-spinner> <!-- Show loading spinner -->
   </ng-container>
-  
+
   <ng-template #articleList>
-    <ng-container *ngIf="news && news.length > 0; else noArticles">
-      <div *ngFor="let article of news" class="mb-4 p-4 border rounded shadow">
+    <ng-container *ngIf="topnews && topnews.length > 0; else noArticles">
+      <div *ngFor="let article of topnews" class="mb-4 p-4 border rounded shadow">
         <div class="p-4 bg-white">
-          <span class="text-red-600 font-bold">{{ article.section }}</span>
-          <h2 class="text-3xl font-bold mt-2">
+          <span class="text-red-600 text-md  font-bold">{{ article.section }}</span>
+          <h2 class="text-md font-bold mt-0">
             <a [href]="article.url" target="_blank" rel="noopener noreferrer" class="hover:underline">
               {{ article.title }}
             </a>
           </h2>
           <p class="text-gray-700 mt-2">{{ article.abstract }}</p>
           <div class="text-gray-500 mt-1">{{ formatPublishedDate(article.published_date) }}</div>
-          <ng-container *ngIf="article.multimedia && article.multimedia.length > 0">
-            <img [src]="article.multimedia[0].url" [alt]="article.title" class="w-full my-2 rounded" />
-          </ng-container>
         </div>
       </div>
     </ng-container>
@@ -28,6 +24,5 @@
     </ng-template>
   </ng-template>
 
-  <!-- Display error message if there is one -->
   <div *ngIf="errorMessage" class="text-red-500">{{ errorMessage }}</div>
 </div>

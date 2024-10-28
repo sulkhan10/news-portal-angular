@@ -1,36 +1,33 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
-import { CommonModule } from '@angular/common'; // Don't forget to import CommonModule
-import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
+
 @Component({
-  selector: 'app-news-list',
-  templateUrl: './news-list.component.html',
-  // styleUrls: ['./news-list.component.css'],
-  imports: [CommonModule,LoadingSpinnerComponent], // Make sure CommonModule is included
+  selector: 'top-news-list',
+  templateUrl: './top-news-list.component.html',
+  imports: [CommonModule, LoadingSpinnerComponent],
   standalone: true,
 })
-export class NewsListComponent implements OnChanges {
-  @Input() category!: string;
-  news: any[] = [];
+export class TopNewsListComponent implements OnInit {
+  topnews: any[] = [];
   loading: boolean = true;
   errorMessage: string = '';
 
   constructor(private newsService: NewsService) {}
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['category']) {
-      this.fetchNews(this.category);
-    }
+  ngOnInit() {
+    this.fetchNewsTop();
   }
 
-  fetchNews(category: string) {
+  fetchNewsTop() {
     this.loading = true;
-    this.errorMessage = ''; // Reset error message
+    this.errorMessage = '';
 
-    this.newsService.fetchNews(category).subscribe(
+    this.newsService.fetchNewsTop().subscribe(
       (data) => {
-        this.news = data.results; // Adjust based on API response
+        console.log(data, 'fetchNewsTop');
+        this.topnews = data.results; // Adjust based on API response
         this.loading = false;
       },
       (error) => {
@@ -39,6 +36,7 @@ export class NewsListComponent implements OnChanges {
       }
     );
   }
+
   formatPublishedDate(dateString: string): string {
     const date = new Date(dateString);
     return date.toLocaleString('en-US', {

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { NewsListComponent } from '../../components/news-list/news-list.component';
-
+import { TopNewsListComponent } from '../../components/top-news-list/top-news-list.component';
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
-  imports: [CommonModule, NewsListComponent], // Add CommonModule here
+  imports: [CommonModule, NewsListComponent,TopNewsListComponent], // Add CommonModule here
   standalone: true,
 })
 export class HomeComponent implements OnInit {

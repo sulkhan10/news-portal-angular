@@ -27,27 +27,14 @@
   </div>
 
   <!-- Main content grid -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto p-6 pt-[17vh]">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto p-6 pt-[17vh] w-[100vw]">
     <!-- Left Column -->
     <div class="col-span-2">
       <app-news-list [category]="selectedCategory"></app-news-list>
     </div>
 
     <!-- Right Column -->
-    <div class="space-y-6">
-      <!-- Article -->
-      <div class="p-4 bg-white shadow">
-        <h3 class="font-bold text-lg">Inside the Movement Behind Trump’s Election Lies</h3>
-        <p class="text-gray-700 mt-2">For years, Republican activists have huddled in video meetings to talk about remaking democracy and plan for the election. The Times has obtained the recordings.</p>
-        <div class="text-gray-500 mt-1">5 min read</div>
-      </div>
-
-      <!-- Article -->
-      <div class="p-4 bg-white shadow">
-        <h3 class="font-bold text-lg">3 Ways to Make Your Commute Enjoyable</h3>
-        <p class="text-gray-700 mt-2">Traffic jams and train delays happen, but they don’t have to ruin your trip.</p>
-        <div class="text-gray-500 mt-1">4 min read</div>
-      </div>
-    </div>
+    <top-news-list></top-news-list>
+   
   </div>
 </div>

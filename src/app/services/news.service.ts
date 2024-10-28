@@ -15,12 +15,11 @@ export class NewsService {
   fetchNews(category: string): Observable<any> {
     return this.http.get<any>(`https://api.nytimes.com/svc/topstories/v2/${category}.json?api-key=${this.apiKey}`);
   }
-
   fetchNewsTop(): Observable<any> {
-    return this.http.get<any>(this.apiUrl + `?api-key=${this.apiKey}`).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.get<any>(`https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${this.apiKey}`);
   }
+
+
 
   private handleError(error: any) {
     console.error('An error occurred:', error); // Log the error to the console
