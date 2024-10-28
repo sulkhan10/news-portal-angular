@@ -1,27 +1,66 @@
-# NewsPortalAngular
+# The SG Times - News Portal Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+## Overview
 
-## Development server
+This project is a news portal application built with Angular, utilizing the NY Times API to fetch and display news articles. The application demonstrates REST API implementation, asynchronous programming, state management, and routing. Additionally, it incorporates Tailwind CSS for styling and basic animations.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Fetch news articles from the NY Times API.
+- Display articles in a user-friendly layout using Tailwind CSS.
+- Implement routing for navigating between different categories of news.
+- Use Angular's asynchronous features such as Promises and Observables.
+- State management for handling data efficiently.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- Angular
+- TypeScript
+- Tailwind CSS
+- NY Times API
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+1. Clone the repository using the following command:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone
+```
 
-## Running end-to-end tests
+2. Navigate to the project directory:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+cd news-portal-angular
+```
 
-## Further help
+3. Install the required dependencies:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+ng serve
+```
+
+5. Open the application in your browser:
+
+```bash
+http://localhost:4200/
+```
+
+## Usage
+
+- Click on the navigation links to view news articles from different categories.
+- Scroll through the articles and click on a card to view more details.
+
+## Demo
+
+A live demo of the application can be found [here](https://sg-times.netlify.app/).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
