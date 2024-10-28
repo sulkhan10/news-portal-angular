@@ -1,0 +1,59 @@
+<div class="container bg-white">
+  <div class="fixed bg-white w-full mx-auto p-6 pb-18 h-[15vh] z-20">
+    <!-- Header -->
+    <header class="flex items-center h-[60%] justify-between border-b pb-4 mb-1">
+      <div class="text-gray-600 text-sm">Always Updated</div>
+      <div class="text-2xl font-bold" style="font-family: 'Goudy Text', serif;">The SG Times</div>
+      <div class="text-gray-600 text-sm">{{ currentDate }}</div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="flex space-x-4 mb-6  justify-center pb-2 border-b border-b-black">
+      <a href="#" class="text-gray-800 hover:underline">U.S.</a>
+      <a href="#" class="text-gray-800 hover:underline">World</a>
+      <a href="#" class="text-gray-800 hover:underline">Business</a>
+      <a href="#" class="text-gray-800 hover:underline">Arts</a>
+      <a href="#" class="text-gray-800 hover:underline">Lifestyle</a>
+      <a href="#" class="text-gray-800 hover:underline">Opinion</a>
+      <a href="#" class="text-gray-800 hover:underline">Audio</a>
+      <a href="#" class="text-gray-800 hover:underline">Games</a>
+      <a href="#" class="text-gray-800 hover:underline">Cooking</a>
+      <span class="absolute bottom-3 left-2 right-6  border-b border-black transform translate-y-full"></span>
+    </nav>
+
+  </div>
+
+  <!-- Main content grid -->
+  <div class="grid grid-cols-3 gap-6 mx-auto p-6 pt-[17vh]">
+    <!-- Left Column -->
+    <div class="col-span-2">
+      <app-news-list />
+    </div>
+
+    <!-- Right Column -->
+    <div class="space-y-6">
+      <!-- Article -->
+      <div class="p-4 bg-white shadow">
+        <h3 class="font-bold text-lg">
+          Inside the Movement Behind Trump’s Election Lies
+        </h3>
+        <p class="text-gray-700 mt-2">
+          For years, Republican activists have huddled in video meetings to talk
+          about remaking democracy and plan for the election. The Times has
+          obtained the recordings.
+        </p>
+        <div class="text-gray-500 mt-1">5 min read</div>
+      </div>
+
+      <!-- Article -->
+      <div class="p-4 bg-white shadow">
+        <h3 class="font-bold text-lg">3 Ways to Make Your Commute Enjoyable</h3>
+        <p class="text-gray-700 mt-2">
+          Traffic jams and train delays happen, but they don’t have to ruin your
+          trip.
+        </p>
+        <div class="text-gray-500 mt-1">4 min read</div>
+      </div>
+    </div>
+  </div>
+</div>

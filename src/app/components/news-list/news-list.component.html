@@ -1,35 +1,36 @@
-<div class="container mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">News Articles</h1>
-  
-    <ng-container *ngIf="loading; else articleList">
-      <app-loading-spinner></app-loading-spinner> <!-- Show loading spinner -->
-    </ng-container>
-  
-    <ng-template #articleList>
-      <ng-container *ngIf="news && news.length > 0; else noArticles">
-        <div *ngFor="let article of news" class="mb-4 p-4 border rounded shadow">
-          <h2 class="font-semibold text-lg text-red-500">
-            <a  class="hover:underline">
-              {{ article.title }}
-            </a>
+<div class="mb-6">
+  <ng-container *ngIf="loading; else articleList">
+    <app-loading-spinner></app-loading-spinner>
+    <!-- Show loading spinner -->
+  </ng-container>
+  <ng-template #articleList>
+    <ng-container *ngIf="news && news.length > 0; else noArticles">
+      <div *ngFor="let article of news" class="mb-4 p-4 border rounded shadow">
+        <div class="p-4 bg-white">
+          <span class="text-red-600 font-bold">{{ article.section }} </span>
+          <h2 class="text-3xl font-bold mt-2">
+            {{ article.title }}
           </h2>
-          <p class="text-gray-700">{{ article.abstract }}</p>
-  
+          <p class="text-gray-700 mt-2">
+            {{ article.abstract }}
+          </p>
+          <div class="text-gray-500 mt-1">
+            {{ article.published_date | date : "HH:mm MMMM d, y" }}
+          </div>
           <ng-container *ngIf="article.multimedia && article.multimedia.length > 0">
-            <img 
-              [src]="article.multimedia[0].url" 
-              [alt]="article.title" 
-              class="my-2 rounded"
-              width="300" 
-              height="auto"
+            <img
+              [src]="article.multimedia[3].url"
+              [alt]="article.title"
+              class="w-full my-2 rounded"
             />
           </ng-container>
+          
         </div>
-      </ng-container>
-  
-      <ng-template #noArticles>
-        <p class="text-gray-500">No articles available at this time.</p>
-      </ng-template>
+      </div>
+    </ng-container>
+
+    <ng-template #noArticles>
+      <p class="text-gray-500">No articles available at this time.</p>
     </ng-template>
-  </div>
-  
+  </ng-template>
+</div>
